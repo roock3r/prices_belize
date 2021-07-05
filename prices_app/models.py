@@ -68,3 +68,15 @@ class ArticlePrice(models.Model):
 
     def __str__(self):
         return f'{self.article.name}-{self.pub_date}'
+
+
+class ArticleCategory(models.Model):
+    category = models.CharField(max_length=32)
+    article = models.ManyToManyField(Article)
+    description = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f'{self.category}-{self.updated_at}'

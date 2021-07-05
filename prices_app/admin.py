@@ -6,3 +6,4 @@ from . import models
 
 admin.site.register(models.Article)
 admin.site.register(models.ArticlePrice)
+admin.site.register(models.ArticleCategory)
